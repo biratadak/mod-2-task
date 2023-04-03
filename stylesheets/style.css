@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+input:focus,
+textarea {
+  outline: none !important;
+}
+
+.fd-row {
+  display: flex;
+  flex-direction: row;
+}
+.pointer {
+  cursor: pointer;
+}
+.cell {
+  cursor: cell;
+}
+.fd-col {
+  display: flex;
+  flex-direction: column;
+}
+.sp-bw {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner-text {
+  font-size: large;
+}
+
+.error-div {
+  margin: 10px;
+  text-align: center;
+  background-color: #910000;
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
+}
+.error {
+  color: red;
+}
+.success {
+  background-color: rgb(19, 155, 27);
+  color: #fff;
+  padding: 2px 5px;
+  border-radius: 5px;
+  text-align: center;
+  border-radius: 10px;
+}
+.center {
+  width: max-content;
+  margin: auto;
+}
+.container {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+.hide {
+  display: none;
+}
+ul,li{
+    list-style: none;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Header */
+
+.navbar-brand img{
+width: 70px;
+height: 40px;
+}
+
+body{
+  background-color: wheat;
+}
+/* Home */
+.home-div{
+  column-gap: 5px;
+}
+/* Right nav section */
+/* .right{
+  width: 25%;
+  max-width: 220px;
+
+  background-color: whitesmoke;
+} */
+
+
+
+
+/* Todo creation */
+.create{
+  padding: 50px 0px;
+  min-height: 700px;
+  width: 100%;
+  /* background-color: rgb(52, 118, 175); */
+  column-gap: 5px;
+  border-radius: 20px;
+  padding: 10px;
+  
+  
+}
+.user_image{
+  width: 40px;
+  height: 40px;
+  border: 0.5px solid black;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#content{
+  height: 45px;
+  border-radius: 15px;
+  width: 100%;
+}
+.add-todo-btn{
+  background-color: black;
+  color: #fff;
+  border-radius: 15px;
+  padding: 0px 5px;
+}
+
+
+
+/* todos design */
+.todos{
+  padding: 10px;
+}
+.todo{
+  background-color: beige;
+  border: 1px solid black;
+}
