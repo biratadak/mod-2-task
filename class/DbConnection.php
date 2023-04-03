@@ -3,16 +3,27 @@
 // Loaded all required libraries.
 require("../vendor/autoload.php");
 
-// require("features.php");
-//  Loading .env credentials.
+// Loading .env credentials for authentication with database.
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->safeLoad();
 
 /**
  * Connects with database using mysqli.
  * 
- * @method getQueryController
- *  Get query response as an array.
+ * @method addTodos
+ *  Add given todo to database.
+ * 
+ * @method deleteTodos
+ *  Delete given todo from database.
+ * 
+ * @method updateTodos
+ *  Update given todo in database.
+ * 
+ * @method doneTodos
+ *  Set status 1(done) of given todo in database.
+ * 
+ * @method getAllTodos
+ *  Fetch all todos form database.
  * 
  * @var string $conn
  *  Store the mysqli connection object.
@@ -44,7 +55,7 @@ class DbConnection
   }
 
   /**
-   * delete Todo . 
+   * Delete Todo . 
    * @param $id
    *  Stores the id of todo.
    * @return void
@@ -55,20 +66,41 @@ class DbConnection
   }
 
   /**
+   * Update Todo . 
+   * @param $id
+   *  Stores the id of todo.
+   * @return void
+   */
+  public function updateTodo($id,$data=""):void
+  {
+  $this->conn->query('UPDATE todo_items 
+  set todo_content="'.$data.'"
+  WHERE id='.$id);
+  }
+
+  /**
+   * Set done Todo item. 
+   * @param $id
+   *  Stores the id of todo.
+   * @return void
+   */
+  public function doneTodo($id):void
+  {
+  $this->conn->query('UPDATE todo_items 
+  set status=1
+  WHERE id='.$id);
+  }
+
+  /**
    * Get all Todos . 
    * 
    * @return mysqli_result
    *  Returns list of Todos.
    */
-  public function getAllTodos($limit = 50)
+  public function getAllTodos()
   {
-    $todos= $this->conn->query('select * from todo_items
-        LIMIT ' . $limit);
+    $todos= $this->conn->query('select * from todo_items');
     return $todos;
   }
-
-
-  
 }
-
   ?>
